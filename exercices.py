@@ -247,9 +247,7 @@ print(swap_first_rows(np.array([[1, 2], [3, 4], [5, 6]])))  # attendu: [[3 4]
 
 
 # %%
-def lignes_paires (arr):
-    if x%2==0:
-        pass
+
 def funny_checkerboard(size):
     t_i_ligne,t_i_colonne = np.indices((size,size))
     res0 = np.zeros((size,size))
@@ -267,6 +265,8 @@ print(funny_checkerboard(5))  # attendu: [[1. 0. 1. 0. 1.]
 
 # %% [markdown]
 # # Niveau 4 : Fonctions d’agrégation
+
+
 
 # %% [markdown]
 # ## Exercices 4.1.	Créer une fonction qui, étant donné un tableau 2D, retourne la moyenne de ses éléments
@@ -288,7 +288,7 @@ print(mean(np.array([1,4,5,3,2])))
 
 # %%
 def sum_odd_columns(arr):
-    res1 = arr.sum(axis = 1)
+    res1 = arr.sum(axis = 0)
     est_pair = np.indices(res1.shape).reshape(res1.shape)
     est_pair = est_pair%2 == 1
     return (res1[est_pair]).sum()  # 👈 Insérez le code ici
